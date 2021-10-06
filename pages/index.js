@@ -6,7 +6,6 @@ import HeroSection from '../src/components/HeroSection.js'
 import SocialNetworkCard from '../src/components/SocialNetworkCard.js'
 import ProjectCard from '../src/components/ProjectCard.js'
 
-
 export default function Home() {
 
   const [userdata, setUserdata] = useState(false);
