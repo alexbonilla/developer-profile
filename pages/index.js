@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import MainNav from '../src/components/MainNav.js'
 import HeroSection from '../src/components/HeroSection.js'
@@ -83,7 +84,7 @@ export default function Home() {
           socialnetwork && socialnetwork.map((record) =>
             {
               console.log('here');
-              return <div className="column is-6"><SocialNetworkCard socialnetwork={record} /></div>
+              return <div className="column is-6"><SocialNetworkCard socialnetwork={record}  key={uuidv4()} /></div>
             }
           )
         }
@@ -97,16 +98,16 @@ export default function Home() {
           reposdata && reposdata.map((repo) =>
             {
               console.log('here');
-              return <div className="column is-3"><ProjectCard repo={repo} /></div>
+              return <div className="column is-3"><ProjectCard repo={repo} key={uuidv4()} /></div>
             }
           )
         }
         </div>
       </section>
-      <footer class="footer mt-6">
-        <div class="content has-text-centered">
+      <footer className="footer mt-6">
+        <div className="content has-text-centered">
           <p>
-            <strong>Developed by Alex Bonilla.</strong> The source code is licensed 
+            <strong>Developed by Alex Bonilla.</strong> The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
           </p>
         </div>
