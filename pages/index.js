@@ -21,7 +21,6 @@ export default function Home() {
       axios.get(`https://api.github.com/users/alexbonilla`)
       .then(response => {
         if(response.status === 200){
-          console.log(response);
           setUserdata(response.data);
         }
         setLoading(false);
@@ -36,7 +35,6 @@ export default function Home() {
       axios.get(`/api/socialnetwork/`)
       .then(response => {
         if(response.status === 200){
-          console.log(response);
           setSocialnetwork(response.data);
         }
         setLoading(false);
@@ -52,7 +50,6 @@ export default function Home() {
         axios.get(userdata.repos_url)
         .then(response => {
           if(response.status === 200){
-            console.log(response);
             setReposdata(response.data);
           }
           setLoading(false);
@@ -83,8 +80,7 @@ export default function Home() {
         {
           socialnetwork && socialnetwork.map((record) =>
             {
-              console.log('here');
-              return <div className="column is-6"><SocialNetworkCard socialnetwork={record}  key={uuidv4()} /></div>
+              return <div className="column is-6" key={uuidv4()}><SocialNetworkCard socialnetwork={record}  key={uuidv4()} /></div>
             }
           )
         }
@@ -97,8 +93,7 @@ export default function Home() {
         {
           reposdata && reposdata.map((repo) =>
             {
-              console.log('here');
-              return <div className="column is-3"><ProjectCard repo={repo} key={uuidv4()} /></div>
+              return <div className="column is-3" key={uuidv4()}><ProjectCard repo={repo} key={uuidv4()} /></div>
             }
           )
         }
