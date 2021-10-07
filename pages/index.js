@@ -71,7 +71,7 @@ export default function Home() {
       }
       <br/>
       {
-        userdata && <HeroSection userdata={userdata}/>
+        userdata && <HeroSection userdata={userdata} />
       }
 
       <section id="about" className="container mt-4 mb-6">
@@ -101,7 +101,7 @@ export default function Home() {
       <footer className="footer mt-6">
         <div className="content has-text-centered">
           <p>
-            <strong>Developed by Alex Bonilla.</strong> The source code is licensed
+            <strong>Developed by {userdata.name}.</strong> The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
           </p>
         </div>
