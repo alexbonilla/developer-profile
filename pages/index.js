@@ -79,7 +79,7 @@ export default function Home() {
         {
           socialnetwork && socialnetwork.map((record) =>
             {
-              return <div className="column is-6" key={uuidv4()}><SocialNetworkCard socialnetwork={record}  key={uuidv4()} /></div>
+              return <div className="column is-4" key={uuidv4()}><SocialNetworkCard socialnetwork={record}  key={uuidv4()} /></div>
             }
           )
         }
