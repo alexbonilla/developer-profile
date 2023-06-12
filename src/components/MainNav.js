@@ -33,7 +33,7 @@ export default function MainNav (props) {
                 Home
               </a>
               <a className="navbar-item" href="#about">
-                Social
+                Links
               </a>
               <a className="navbar-item" href="#projects">
                 Projects
