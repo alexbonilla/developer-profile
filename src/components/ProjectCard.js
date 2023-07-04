@@ -13,11 +13,6 @@ export default function ProjectCard (props) {
             repo.language &&  <span className="tag my-3">{repo.language}</span>
           }
           <br/>
-          <ul>
-            {repo.topics & repo.topics.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
           <time>{repo.created_at}</time>
         </div>
       </div>
