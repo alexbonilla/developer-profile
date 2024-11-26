@@ -29,14 +29,17 @@ export default function MainNav (props) {
           </div>
           <div id="navMenu" className={`navbar-menu ${activeClass}`}>
             <div className="navbar-start">
-              <a className="navbar-item" href="#">
-                Home
+              <a className="navbar-item" href="#about-me">
+                About Me
               </a>
-              <a className="navbar-item" href="#about">
-                Links
+              <a className="navbar-item" href="#skills">
+                Skills
               </a>
-              <a className="navbar-item" href="#projects">
-                Projects
+              <a className="navbar-item" href="#repos">
+                Repositories
+              </a>
+              <a className="navbar-item" href="#other-links">
+                Other Links
               </a>
             </div>
           </div>
