@@ -6,6 +6,7 @@ import HeroSection from '../src/components/HeroSection.js'
 import SkillCard from '../src/components/SkillCard.js'
 import SocialNetworkCard from '../src/components/SocialNetworkCard.js'
 import ProjectCard from '../src/components/ProjectCard.js'
+import BackToTop from "../src/components/BackToTop";
 
 export default function Home() {
 
@@ -86,7 +87,7 @@ export default function Home() {
   } else
 
     return (
-      <>        
+      <>
         {
           userdata && <MainNav userdata={userdata} />
         }
@@ -130,6 +131,8 @@ export default function Home() {
             }
           </div>
         </section>
+
+        <BackToTop />
 
         <footer className="footer mt-6">
           <div className="content has-text-centered">
