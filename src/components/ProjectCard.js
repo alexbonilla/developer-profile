@@ -6,14 +6,15 @@ export default function ProjectCard (props) {
         <div className="content">
           <h3 className="title is-12"><a href={repo.html_url} target="_new">{repo.name}</a></h3>
           <p>{repo.description !== null?repo.description:"No description added yet."}</p>
-          {repo.homepage!=null?(<div className="homepage_url"><a href={repo.homepage} target="_blank">Homepage</a></div>):(<br/>)}
+          {repo.homepage!=null?(<div className="homepage_url"><a href={repo.homepage} target="_new">Homepage</a></div>):(<br/>)}
           <label>Stargazers:</label> <span>{repo.stargazers_count}</span>
           <br/>
           {
             repo.language &&  <span className="tag my-3">{repo.language}</span>
           }
           <br/>
-          <time>{repo.created_at}</time>
+          <label>Last Updated:</label>
+          <time>{repo.updated_at}</time>
         </div>
       </div>
     </div>
