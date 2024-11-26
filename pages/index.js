@@ -49,7 +49,7 @@ export default function Home() {
   useEffect(() => {
     setLoading(true);
     if (userdata) {
-      axios.get(userdata.repos_url + '?sort=date_updated&per_page=8')
+      axios.get(userdata.repos_url + '?sort=updated&per_page=8')
         .then(response => {
           if (response.status === 200) {
             // Sort repositories by 'updated_at' in descending order

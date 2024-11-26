@@ -35,7 +35,7 @@ export default function HeroSection (props) {
     <section div="about-me" className="hero is-black is-small">
     <div className="container">
       <div className="hero-body">
-        <div className="columns is-mobile">          
+        <div className="columns is-multiline">          
           <div className="column is-6">            
             <img src={`/images/dev_${Math.floor(Math.random() * 3)}.webp`} className="profile_image" alt="Random Developer"/>
           </div>
