@@ -6,6 +6,6 @@ This is a NextJS application to showcase my GitHub repositories. It includes as 
 
 The application makes a request to the GitHub API to pull the information for my profile, and then I am able to show each repository using a defined component "ProjectCard.js".
 
-This repository is This repository deploys from Github to Netlify at https://musing-thompson-dc9bad.netlify.app.
+This repository is This repository deploys from Github to Netlify at [https://alex-bonilla.netlify.app](https://alex-bonilla.netlify.app).
 
 
