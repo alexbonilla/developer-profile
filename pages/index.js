@@ -13,6 +13,7 @@ export default function Home() {
   const [userdata, setUserdata] = useState(false);
   const [skillsdata, setSkillsdata] = useState(null);
   const [reposdata, setReposdata] = useState(null);
+  const [credlydata, setCredlydata] = useState(null);
   const [socialnetwork, setSocialnetwork] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -28,6 +29,20 @@ export default function Home() {
         setLoading(false);
       }).catch(error => {
         console.log('An error ocurred while requesting for user data.');
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+
+    axios.get(`https://www.credly.com/users/alexbonilla/badges?page=1&page_size=48&sort=rank`, { headers: { 'Accept': 'application/json' } })  
+      .then(response => {
+        if (response.status === 200) {
+          setCredlydata(response.data);
+        }
+        setLoading(false);
+      }).catch(error => {
+        console.log('An error ocurred while requesting for Credly data.');
         setLoading(false);
       });
   }, []);
