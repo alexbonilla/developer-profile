@@ -1,6 +1,14 @@
 module.exports = {
-  reactStrictMode: true,
   images: {
-    domains: ['avatars.githubusercontent.com','bulma.io']
-  }
-}
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "bulma.io",
+      },
+    ],
+  },
+};
