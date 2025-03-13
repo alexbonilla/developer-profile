@@ -32,13 +32,15 @@ export default function Home() {
         setLoading(false);
       });
   }, []);
+  
 
   useEffect(() => {
 
-    axios.get(`https://www.credly.com/users/alexbonilla/badges?page=1&page_size=48&sort=rank`, { headers: { 'Accept': 'application/json' } })  
+    axios.get(`/api/credly`)  
       .then(response => {
         if (response.status === 200) {
           setCredlydata(response.data);
+          console.log(response.data);
         }
         setLoading(false);
       }).catch(error => {
