@@ -13,7 +13,7 @@ export default function Home() {
   const [userdata, setUserdata] = useState(false);
   const [skillsdata, setSkillsdata] = useState(null);
   const [reposdata, setReposdata] = useState(null);
-  const [credlydata, setCredlydata] = useState(null);
+  
   const [socialnetwork, setSocialnetwork] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -34,20 +34,7 @@ export default function Home() {
   }, []);
   
 
-  useEffect(() => {
-
-    axios.get(`/api/credly/`)  
-      .then(response => {
-        if (response.status === 200) {
-          setCredlydata(response.data);
-          console.log(response.data);
-        }
-        setLoading(false);
-      }).catch(error => {
-        console.log('An error ocurred while requesting for Credly data.');
-        setLoading(false);
-      });
-  }, []);
+  
 
   useEffect(() => {
 
