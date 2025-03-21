@@ -15,7 +15,7 @@ const skills = [
       name: 'Python',
       slug: 'Python',
       description: 'Python (Programming Language)',
-      experience: '1+ years'
+      experience: '3+ years'
     },
     {
       name: 'Java',
