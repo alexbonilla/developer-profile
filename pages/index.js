@@ -31,10 +31,7 @@ export default function Home() {
         console.log('An error ocurred while requesting for user data.');
         setLoading(false);
       });
-  }, []);
-  
-
-  
+  }, []);  
 
   useEffect(() => {
 
