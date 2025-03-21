@@ -12,6 +12,12 @@ const socialnetwork = [
       description: 'Experience and network.'
     },
     {
+      name: 'Credly Dashboard',
+      slug: 'Credly',
+      html_url: 'https://www.credly.com/users/alexbonilla',
+      description: 'Credly Badges Dashboard.'
+    },
+    {
       name: 'SoundCloud',
       slug: 'SoundCloud',
       html_url: 'https://soundcloud.com/alex-fernando-bonilla',

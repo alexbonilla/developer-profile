@@ -142,7 +142,7 @@ export default function Home() {
           <div className="columns is-multiline">
             {
               socialnetwork && socialnetwork.map((record) => {
-                return <div className="column is-4" key={uuidv4()}><SocialNetworkCard socialnetwork={record} key={uuidv4()} /></div>
+                return <div className="column is-3" key={uuidv4()}><SocialNetworkCard socialnetwork={record} key={uuidv4()} /></div>
               }
               )
             }
