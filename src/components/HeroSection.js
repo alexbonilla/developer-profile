@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 export default function HeroSection (props) {
 
@@ -38,7 +38,7 @@ export default function HeroSection (props) {
       <div className="hero-body">
         <div className="columns is-multiline">          
           <div className="column is-6">            
-            <Image src={`/images/dev_${Math.floor(Math.random() * 3)}.webp`} className="profile_image" alt="Random Developer"/>
+            <Image src={`/images/dev_${Math.floor(Math.random() * 3)}.webp`} className="profile_image" layout='fill' alt="Random Developer"/>
           </div>
           <div className="column is-6">
             <h1 className="title">
