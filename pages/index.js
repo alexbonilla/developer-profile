@@ -36,7 +36,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    axios.get(`/api/credly`)  
+    axios.get(`/api/credly/`)  
       .then(response => {
         if (response.status === 200) {
           setCredlydata(response.data);
