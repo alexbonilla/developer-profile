@@ -8,11 +8,13 @@ import SocialNetworkCard from '../src/components/SocialNetworkCard.js'
 import ProjectCard from '../src/components/ProjectCard.js'
 import Badge from '../src/components/Badge.js'
 import BackToTop from "../src/components/BackToTop";
+import Recommendation from '../src/components/Recommendation.js';
 
 export default function Home() {
 
   const [userdata, setUserdata] = useState(false);
   const [skillsdata, setSkillsdata] = useState(null);
+  const [recommendationdata, setRecommendationdata] = useState(null);
   const [reposdata, setReposdata] = useState(null);
   const [credlydata, setCredlydata] = useState(false);
   const [socialnetwork, setSocialnetwork] = useState(null);
@@ -86,6 +88,20 @@ export default function Home() {
 
   useEffect(() => {
 
+    axios.get(`/api/recommendation/`)
+      .then(response => {
+        if (response.status === 200) {
+          setRecommendationdata(response.data);
+        }
+        setLoading(false);
+      }).catch(error => {
+        console.log('An error ocurred while requesting for recommendation data.');
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+
     axios.get(`/api/socialnetwork/`)
       .then(response => {
         if (response.status === 200) {
@@ -118,6 +134,18 @@ export default function Home() {
             {
               skillsdata && skillsdata.map((record) => {
                 return <div className="column is-4" key={uuidv4()}><SkillCard skill={record} key={uuidv4()} /></div>
+              }
+              )
+            }
+          </div>
+        </section>
+
+        <section id="recommendations" className="container mt-4 mb-6">
+          <h2 className="title is-12 has-text-centered my-6">LinkedIn Recommendations</h2>
+          <div className="columns is-multiline">
+            {
+              recommendationdata && recommendationdata.map((record) => {
+                return <div className="column is-4" key={uuidv4()}><Recommendation recommendation={record} key={uuidv4()} /></div>
               }
               )
             }

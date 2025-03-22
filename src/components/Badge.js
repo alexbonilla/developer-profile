@@ -1,5 +1,6 @@
 import Image from 'next/legacy/image'
 import {formatDate} from "../utils/utils"
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Badge(props) {
     const { badge } = props;
@@ -22,7 +23,7 @@ export default function Badge(props) {
                     <ul>
                         {
                             Array.isArray(badge.badge_template.skills) && badge.badge_template.skills.map((skill) => {
-                                return <li>{skill.name}</li>
+                                return <li key={uuidv4()}>{skill.name}</li>
                             }
                             )
                         }
