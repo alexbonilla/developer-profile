@@ -8,5 +8,9 @@ export const images = {
       protocol: "https",
       hostname: "bulma.io",
     },
+    {
+      protocol: "https",
+      hostname: "images.credly.com",
+    },
   ],
 };

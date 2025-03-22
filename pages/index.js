@@ -6,6 +6,7 @@ import HeroSection from '../src/components/HeroSection.js'
 import SkillCard from '../src/components/SkillCard.js'
 import SocialNetworkCard from '../src/components/SocialNetworkCard.js'
 import ProjectCard from '../src/components/ProjectCard.js'
+import Badge from '../src/components/Badge.js'
 import BackToTop from "../src/components/BackToTop";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
   const [userdata, setUserdata] = useState(false);
   const [skillsdata, setSkillsdata] = useState(null);
   const [reposdata, setReposdata] = useState(null);
-  
+  const [credlydata, setCredlydata] = useState(false);
   const [socialnetwork, setSocialnetwork] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -32,6 +33,20 @@ export default function Home() {
         setLoading(false);
       });
   }, []);  
+
+  useEffect(() => {
+
+    axios.get(`/api/credly/`)
+      .then(response => {
+        if (response.status === 200) {
+          setCredlydata(response.data);
+        }
+        setLoading(false);
+      }).catch(error => {
+        console.log('An error ocurred while requesting for socialnetwork data.');
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
 
@@ -86,7 +101,7 @@ export default function Home() {
   if (loading) {
     return <>Loading...</>
   } else
-
+    
     return (
       <>
         {
@@ -108,6 +123,18 @@ export default function Home() {
             }
           </div>
         </section>
+
+        <section id="badges" className="container mt-4 mb-6">
+          <h2 className="title is-12 has-text-centered my-6">Credly Badges</h2>
+          <div className="columns is-multiline">
+            {
+              Array.isArray(credlydata.data) && credlydata.data.map((badge) => {
+                return <div className="column is-4" key={uuidv4()}><Badge badge={badge} key={uuidv4()} /></div>
+              }
+              )
+            }
+          </div>
+        </section>        
 
         <section id="repos" className="container">
           <h2 className="title is-12 has-text-centered my-6">GitHub repositories</h2>
